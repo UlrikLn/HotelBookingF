@@ -1,0 +1,45 @@
+.container {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Aligns items to the start of the container */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#roomContainer {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Aligns items to the start of the container */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+}
+
+.room-card {
+    flex: 1 0 21%; /* Flex grow, flex shrink, flex basis */
+    /* Adjust the flex-basis percentage to allow for the number of cards you want per row */
+    /* For example, for 4 cards, use a little less than 25% to account for the gap */
+    box-sizing: border-box; /* Include padding and border in the width */
+    max-width: 300px; /* Maximum width of the cards */
+    margin-bottom: 20px; /* Add some space at the bottom */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.room-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Larger shadow on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .room-card {
+        flex-basis: 100%; /* Full width on small screens */
+    }
+}
